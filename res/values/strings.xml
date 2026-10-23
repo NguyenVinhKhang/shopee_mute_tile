@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shopee Mute Tile</string>
+    <string name="tile_label">Tắt tiếng Shopee</string>
+    <string name="tile_state_muted">Đã tắt âm</string>
+    <string name="tile_state_unmuted">Có âm thanh</string>
+</resources>

@@ -1,0 +1,18 @@
+# Build output & temporary files
+bin/
+build/
+*.apk
+*.idsig
+*.flata
+res.zip
+base.apk
+ShopeeMuteTile_aligned.apk
+.gradle/
+.idea/
+*.iml
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+**/R.java
