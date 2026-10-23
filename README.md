@@ -64,26 +64,36 @@ adb shell "nohup toybox nc -s 127.0.0.1 -p 19876 -L /data/local/tmp/shopee_handl
 
 ---
 
+## ⚡ Hướng Dẫn Cài Đặt Vĩnh Viễn Không Cần Daemon (Privileged System App)
+
+Nếu điện thoại của bạn đã Unlock Bootloader (ví dụ Redmi Note 7 Pro), bạn có thể cài `ShopeeMuteTile` trực tiếp vào phân vùng hệ thống (`/system/priv-app/`) bằng cách boot tạm thời **OrangeFox / TWRP Recovery**:
+* **Không cần cắm cáp sau mỗi lần reboot.**
+* **Không cần chạy script daemon ngầm.**
+* Xem tài liệu hướng dẫn từng bước chi tiết tại: **[ORANGEFOX_INSTALL_GUIDE.md](ORANGEFOX_INSTALL_GUIDE.md)**.
+
+---
+
 ## 📂 Cấu Trúc Mã Nguồn
 
 ```
 shopee_mute_tile/
 ├── AndroidManifest.xml              # Cấu hình TileService (SDK 29 - 36, No Launcher)
 ├── build.sh                         # Script build APK tự động bằng Android SDK
-├── .gitignore                       # Bỏ qua các file tạm biên dịch
-├── LICENSE                          # Giấy phép MIT
+├── ORANGEFOX_INSTALL_GUIDE.md       # Hướng dẫn chi tiết cài vĩnh viễn qua OrangeFox
 ├── README.md                        # Hướng dẫn chi tiết
 ├── res/                             # Tài nguyên icon vector & chuỗi ngôn ngữ
 │   ├── drawable/
 │   │   └── ic_mute.xml              # Icon loa gạch chéo chuẩn vector
 │   └── values/
 │       └── strings.xml              # Tiêu đề và nhãn đa ngôn ngữ
-├── scripts/                         # Các script quản lý daemon trên thiết bị
+├── scripts/                         # Các script quản lý daemon & priv-app
 │   ├── handler.sh                   # Script xử lý lệnh trên điện thoại Android
+│   ├── install_priv_app.sh          # Script tự động nạp priv-app qua OrangeFox
+│   ├── privapp-permissions-shopeemute.xml  # Whitelist quyền MANAGE_APP_OPS_MODES
 │   └── start_daemon.sh              # Script 1-click kích hoạt daemon qua ADB
 └── src/                             # Mã nguồn Java
     └── com/nvkhang/shopeemutetile/
-        └── ShopeeMuteTileService.java  # TileService điều khiển nút bấm & socket
+        └── ShopeeMuteTileService.java  # TileService điều khiển nút bấm (Dual Mode)
 ```
 
 ---

@@ -1,7 +1,6 @@
 # Build output & temporary files
 bin/
 build/
-*.apk
 *.idsig
 *.flata
 res.zip
@@ -11,6 +10,9 @@ ShopeeMuteTile_aligned.apk
 .idea/
 *.iml
 local.properties
+
+# Pre-built APK for direct flashing
+!ShopeeMuteTile.apk
 
 # OS files
 .DS_Store
